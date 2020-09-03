@@ -16,12 +16,33 @@ devtools::install_github("hadley/emo")
 ```
 
 ## In the process of installing above packages,I have some questions:
-2.1 Error : Failed to install 'sloop' from GitHub: schannel: failed to receive handshake, SSL/TLS connection failed
+
+2.1 Error :Failed to install 'unknown package' from GitHub:
+schannel: failed to receive handshake, SSL/TLS connection failed.
+solutions：knitr::include_graphics("image/ssl.png")
+
+2.2 Error : Quitting from lines 209-221 (Big-picture.Rmd) 错误: The dbplyr package is required to communicate with database backends.
+solutions：Install.packages("dbplyr")
+
+2.3 Error : Quitting from lines 233-234 (Perf-measure.Rmd) 错误: ggbeeswarm must be installed to use type = "beeswarm" option.
+solutions:Install.packages("ggbeeswarm")
+
+2.4 Error : Quitting from lines 77-84 (Rcpp.Rmd) Error in sourceCpp(code = code, env = env, rebuild = rebuild, cacheDir = cacheDir, : Error 1 occurred building shared library. Calls: local ... withVisible -> eval -> eval -> cppFunction -> sourceCpp
+solutions: Install.packages("Rcpp")
+
+2.5 Error : Failed to install 'sloop' from GitHub: schannel: failed to receive handshake, SSL/TLS connection failed
 solutions:
 ```
 git config --global http.sslBackend "openssl"
 git config --global http.sslCAInfo D:\文件ZM\learn_git\adv-r
 ```
-2.2 Error : Failed to install 'sloop' from GitHub:
+2.6 Error : Error in readRDS(dest) : 读取链结时发生了错误 Error in install.packages : 读取链结时发生了错误
+solutions:重新设置镜像 Tools-global options-packages -change(China)
+
+2.7 Error :错误: 找不到对象'.libP' 停止执行
+solutions:重新设置安装路径
+.libPaths(c("Your path",.libPaths())) .libPaths()
+
+2.8 Error : Failed to install 'sloop' from GitHub:
   System command 'Rcmd.exe' failed, exit status: -1, stdout + stderr empty
 I have not solve this question,i will continue
